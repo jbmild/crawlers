@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<body>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const buttons = document.querySelectorAll(".add-to-cart-button");
+		buttons.forEach(button => {
+			if (button.disabled) {
+				button.textContent = "Agotado";
+			}
+		});
+	});
+</script>
+<table class="variations-table">
+  <tbody>
+    <tr>
+      <td><img alt="Iron Man - Fasciculo #01" src="https://brihet.com.ar/wp-content/uploads/2026/10/IM-01.png" /></td>
+      <td>Fascículo N° 01 + piezas</td>
+      <td><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>4,500.00</bdi></span></td>
+      <td>
+        <form class="cart" method="post">
+          <input type="hidden" name="add-to-cart" value="339133" />
+          <button type="submit" class="add-to-cart-button" disabled>Añadir al carrito</button>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td><img alt="Iron Man - Fasciculo #02" /></td>
+      <td>Fascículo N° 02 + piezas</td>
+      <td><span class="woocommerce-Price-amount amount"><bdi>$5,000.00</bdi></span></td>
+      <td>
+        <form class="cart" method="post">
+          <input type="hidden" name="add-to-cart" value="339134" />
+          <button type="submit" class="add-to-cart-button">Añadir al carrito</button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

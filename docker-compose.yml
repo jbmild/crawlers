@@ -1,0 +1,12 @@
+services:
+  crawlers:
+    build: .
+    container_name: crawlers
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ./config/crawlers.yaml:/app/config/crawlers.yaml:ro
+      - crawler-data:/app/data
+
+volumes:
+  crawler-data:

@@ -1,0 +1,19 @@
+# Cada crawler se ejecuta cada interval_seconds.
+# Si la condición se cumple, se disparan las acciones.
+crawlers:
+  - id: iron-man-mark-iii
+    name: "Iron Man – Construí la armadura Mark III"
+    type: brihet_variations
+    enabled: true
+    interval_seconds: 300
+    url: https://brihet.com.ar/producto/iron-man-construi-la-armadura-mark-iii/
+    condition:
+      type: field_not_equals
+      field: status
+      value: agotado
+      # Avisa una sola vez por fascículo, cuando deja de estar agotado.
+      trigger: on_change
+    actions:
+      - type: telegram
+    # Si la página falla esta cantidad de veces seguidas, también avisa.
+    error_after: 5
